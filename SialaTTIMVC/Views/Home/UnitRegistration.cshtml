@@ -1,0 +1,173 @@
+﻿@{
+    Layout = "./_DashboardLayout.cshtml";
+    ViewBag.Title = "Dashboard";
+}
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Units Registration</h3>
+
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                <i class="fa fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="box-body collapse in">
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>Student No:
+                    <asp:Label ID="lblStudentNo" runat="server" Width="389px" ForeColor="Green"></asp:Label></td>
+                                <td>
+                                    <asp:Label ID="Label1" runat="server" Width="50px"></asp:Label></td>
+                                <td>Semester:
+                    <asp:Label ID="lblSemester" runat="server" Width="313px" ForeColor="Green"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td>Names:
+                    <asp:Label ID="lblNames" runat="server" Width="414px" ForeColor="Green"></asp:Label></td>
+                                <td></td>
+                                <td>E-mail:
+                    <asp:Label ID="lblEmail" runat="server" Width="229px" ForeColor="Green"></asp:Label></td>
+                            </tr>
+                            <tr>
+                                <td>Programme:
+                    &nbsp;<%--<asp:DropDownList ID="ddlProgrammes" runat="server" AutoPostBack="True" ForeColor="Green"
+                        OnSelectedIndexChanged="ddlProgrammes_SelectedIndexChanged" Width="100%">
+                    </asp:DropDownList>--%>
+                                    <asp:Label ID="LblProgrammes" runat="server" ForeColor="Green" Text=""></asp:Label>
+
+                                </td>
+                                <td></td>
+                                <td>Stage:
+                    
+                    <asp:Label ID="LblStage" runat="server" ForeColor="Green" Text=""></asp:Label>
+                                    <asp:DropDownList ID="ddlStages" Visible="false" runat="server" AutoPostBack="True" ForeColor="Green"
+                                        OnSelectedIndexChanged="ddlStages_SelectedIndexChanged" Width="276px">
+                                    </asp:DropDownList></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:Label ID="Label2" runat="server" Width="480px"></asp:Label></td>
+                                <td></td>
+                                <td>
+                                    <asp:Label ID="LblTransID" runat="server" Width="285px"></asp:Label></td>
+                            </tr>
+                        </table>
+                        <%--<br />--%>
+                        <div class="clearfix visible-lg"></div>
+                        <asp:Label ID="LblMssg" runat="server" ForeColor="Red" Width="100%" Font-Size="10pt"></asp:Label>
+                        <span style="text-decoration: underline"></span></strong><span style="font-size: 10pt; color: orangered"></span>
+                        <br />
+                        <table id="curved_border" class="table table-striped">
+                            <tr id="trrr" runat="server">
+                                <td colspan="3">
+                                    <strong><span style="font-size: 10pt; text-decoration: underline">
+                                        <%-- <br />
+                                            <br />--%>
+                                            UNITS TO REGISTER:<br />
+                                    </span></strong><span style="font-size: 10pt; color: orangered">Please check the units you wish to register and then click on the button labeled "<strong><em>Register
+        Unit(s)</em></strong>".<br />
+                                        To view the units registered, scroll to the bottom of this page.</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <asp:Panel ID="DeadlineMsg" runat="server" Visible="false" class="alert alert-danger"><b>Unit registration is closed.</b> Unit registration Deadline has passed.</asp:Panel>
+                                    <asp:CheckBoxList ID="cblUnits" runat="server" Width="100%" RepeatColumns="4" ForeColor="Blue" RepeatDirection="Horizontal">
+                                    </asp:CheckBoxList>
+                                    <asp:Button ID="btnRegisterUnits" runat="server" BorderColor="Blue" BorderStyle="Ridge" BorderWidth="1px"
+                                        ForeColor="Green" Height="30px" Text="Select Unit(s)" ToolTip="Click here to select all the CHECKED units."
+                                        Width="150px" OnClick="btnRegisterUnits_Click" /></td>
+                            </tr>
+                            <tr id="seledtdtd" runat="server">
+                                <td colspan="3">
+                                    <span style="font-size: 10pt"><span style="text-decoration: underline"><strong>
+                                        <%-- <br />
+                                            <br />--%>
+                                            SELECTED UNITS<br />
+                                    </strong></span></span><%--<span style="color: red">For you to be registered, please ensure you
+                    submit the units by clicking the button labeled "Submit Units"</span></span>--%></td>
+                            </tr>
+                            <tr id="seledtd" runat="server">
+                                <td colspan="3">
+                                    <asp:GridView ID="gvBasket" runat="server" AllowPaging="True" AllowSorting="True"
+                                        AutoGenerateColumns="False" CellPadding="4" EmptyDataText="NO UNITS FOUND"
+                                        ForeColor="#333333" OnPageIndexChanging="gvBasket_PageIndexChanging" OnSelectedIndexChanged="gvBasket_SelectedIndexChanged"
+                                        OnSorting="gvBasket_Sorting" PageSize="50" Width="100%">
+                                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                        <EmptyDataRowStyle BackColor="Black" ForeColor="Red" />
+                                        <Columns>
+                                            <asp:BoundField DataField="Unit" HeaderText="Unit" SortExpression="Unit" />
+                                            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+                                            <asp:CommandField SelectText="Remove/Deregister" ShowSelectButton="True">
+                                                <ItemStyle Font-Bold="True" ForeColor="Green" Width="150px" />
+                                            </asp:CommandField>
+                                        </Columns>
+                                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                        <HeaderStyle BackColor="#28b779" Font-Bold="True" ForeColor="White" />
+                                        <EditRowStyle BackColor="#999999" />
+                                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                    </asp:GridView>
+                                    <asp:Button ID="btnSubmit" runat="server" BorderColor="Blue"
+                                        BorderStyle="Ridge" BorderWidth="1px"
+                                        ForeColor="Green" Height="30px" Text="Submit Unit(s)" ToolTip="Click here to register for all the CHECKED units."
+                                        Width="150px" OnClick="btnSubmit_Click" /></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <span style="font-size: 10pt; text-decoration: underline"><strong>
+                                        <%--    <br />
+                                            <br />--%>
+                                            REGISTERED UNITS:</strong></span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" style="border-right: gray thin ridge; border-top: gray thin ridge; border-left: gray thin ridge; color: black; border-bottom: gray thin ridge">
+                                    <asp:GridView ID="gvRegistered" class="table table-bordered" runat="server" AllowPaging="True" AllowSorting="True"
+                                        AutoGenerateColumns="False" CellPadding="4" EmptyDataText="NO UNITS FOUND"
+                                        ForeColor="#333333" OnPageIndexChanging="gvRegistered_PageIndexChanging"
+                                        Width="100%" PageSize="50" OnSelectedIndexChanging="gvRegistered_SelectedIndexChanging">
+                                        <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                        <EmptyDataRowStyle BackColor="Black" ForeColor="Red" />
+                                        <Columns>
+                                            <asp:BoundField DataField="Unit" HeaderText="Unit" SortExpression="Unit" />
+                                            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+                                            <asp:CommandField SelectText="Remove" ShowSelectButton="True" Visible="false">
+                                                <ItemStyle Font-Bold="True" ForeColor="Red" Width="150px" />
+                                            </asp:CommandField>
+                                        </Columns>
+                                        <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                        <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                        <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                        <HeaderStyle BackColor="#28b779" Font-Bold="True" ForeColor="White" />
+                                        <EditRowStyle BackColor="#999999" />
+                                        <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                    </asp:GridView>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <br />
+                        <br />
+                        <br />
+                        <asp:Label ID="lblError" runat="server" ForeColor="Red" Width="100%" Font-Size="10pt"></asp:Label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+

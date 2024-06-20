@@ -1,129 +1,375 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar Menu</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <style>
-        .main-sidebar {
-            width: 250px;
-        }
+﻿@{
+    Layout = "./_DashboardLayout.cshtml";
+    ViewBag.Title = "Dashboard";
+}
 
-        .sidebar {
-            padding: 15px;
-            background: #f4f4f4;
-        }
+<section class="content">
+    <!-- Info boxes -->
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="info-box bg-yellow">
+                <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
 
-        .sidebar-menu {
-            list-style: none;
-            padding: 0;
-        }
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Billed:</span>
+                    <span class="info-box-number">
+                        Ksh.
+                        
+                    </span>
 
-            .sidebar-menu .treeview-menu {
-                display: none;
-                list-style: none;
-                padding-left: 20px;
-            }
-
-                .sidebar-menu .treeview-menu li {
-                    margin: 5px 0;
-                }
-
-        .treeview > a {
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <section class="col-md-9">
-        <aside class="main-sidebar">
-            <section class="sidebar">
-                <div class="user-panel">
-                    <br />
-                    <div class="pull-left image">
-                        <img src="../images/logo.png" class="img-circle" alt="User Image">
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 50%"></div>
                     </div>
-                    <div class="pull-left info">
-                        <p>
-                            <asp:Label ID="lblUser3" runat="server" style="color:black"></asp:Label>
-                        </p>
-                        <a href="#"><i class="fa fa-circle text-success"></i><h5 class="text-green">Online</h5></a>
+                    <a href="" class="small-box-footer white" style="color: white">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="info-box bg-green">
+                <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Total Paid:</span>
+                    <span class="info-box-number">
+                        Ksh.
+                       
+                    </span>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 20%"></div>
+                    </div>
+                    <a href="" class="small-box-footer white" style="color: white">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+        </div>
+        <!-- /.col -->
+        <!-- fix for small devices only -->
+        <div class="clearfix visible-sm-block"></div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <!-- /.info-box -->
+            <div class="info-box bg-aqua">
+                <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
+
+                <div class="info-box-content">
+                    <span class="info-box-text">Balance:</span>
+                    <span class="info-box-number">
+                        Ksh.
+                        
+                    </span>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 40%"></div>
+                    </div>
+                    <a href="" class="small-box-footer white" style="color: white">View Details <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+                <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+        </div>
+    </div>
+
+    <!-- Main row -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">User Profile</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                     </div>
                 </div>
-                <ul class="sidebar-menu" data-widget="tree">
-                    <li class="header">MAIN NAVIGATION</li>
-                    <li><a href="#"><i class="fa fa-dashboard text-blue"></i><span>Dashboard</span></a></li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-pie-chart text-red"></i>
-                            <span>Financials</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="ProformaInvoice.aspx"><i class="fa fa-circle-o"></i>Profoma Invoice</a></li>
-                            <li><a href="FeeStatement.aspx"><i class="fa fa-circle-o"></i>Fees Statement</a></li>
-                            <li><a href="FeesPDF.aspx"><i class="fa fa-circle-o"></i>Fees Statement - PDF</a></li>
-                            <li><a href="Receipts.aspx"><i class="fa fa-circle-o"></i>Payment Receipts</a></li>
-                            <li><a href="FeeStructure.aspx"><i class="fa fa-circle-o"></i>Fee Structure</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-graduation-cap text-green"></i>
-                            <span>Academics</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="UnitsRegistration.aspx"><i class="fa fa-circle-o"></i>Register Units</a></li>
-                            <li><a href="ProvisionalResults.aspx"><i class="fa fa-circle-o"></i>Provisional Results</a></li>
-                            <li><a href="ProvisionalTranscript.aspx"><i class="fa fa-circle-o"></i>Provisional Transcript</a></li>
-                            <li><a href="ExamCards.aspx"><i class="fa fa-circle-o"></i>Exam Cards</a></li>
-                        </ul>
-                    </li>
-                    <li id="sttt" runat="server" class="treeview">
-                        <a href="#">
-                            <i class="fa fa-cogs text-blue"></i>
-                            <span>Settings</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="ChangePassword.aspx"><i class="fa fa-circle-o"></i>Change password</a></li>
-                        </ul>
-                    </li>
-                    <li class="header">PERIODIC ACTIVITIES</li>
-                    <li id="Reg" runat="server"><a href="SemRegister.aspx"><i class="fa fa-registered text-red"></i><span>Session Registration</span></a></li>
-                    <li><a href="LecsEvaluation.aspx"><i class="fa fa-microphone text-yellow"></i><span>Lecturers Evaluation</span></a></li>
-                </ul>
-            </section>
-        </aside>
-    </section>
+                <!-- /.box-header -->
+                <div class="box-body box-profile">
+                    @* <asp:Image ID="ImgProfileDefault" runat="server" Visible="false" CssClass="profile-user-img img-responsive img-circle" alt="User profile picture" Height="200px" Width="200px" />
+                    <asp:Image ID="ImgProfilePic" runat="server" CssClass="profile-user-img img-responsive img-circle" alt="User profile picture" Height="200px" Width="200px" /> *@
+                    <h3 class="profile-username text-center">
+                        
+                    </h3>
 
-    <!-- Ensure you include jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Toggle the visibility of the treeview menu on click
-            $('.treeview > a').on('click', function (e) {
-                e.preventDefault(); // Prevent the default link behavior
+                    <strong><i class="fa fa-book margin-r-5"></i>Programme</strong>
 
-                // Toggle the visibility of the next treeview-menu
-                var $this = $(this);
-                var $treeviewMenu = $this.next('.treeview-menu');
+                    <p class="text-muted">
+                        
+                    </p>
+                    <hr>
+                </div>
+                <!-- /.box-body -->
+                <div class="box-footer no-padding">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li>
+                            <a href="#">
+                                My Stage
+                                <span class="pull-right text-red">
+                                    <i class="fa fa-angle-down"></i>
+                                    
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+               @*  <%-- <div class="box-footer clearfix">
+                    <a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
+                    <a href="javascript:void(0)" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
+                </div>--%> *@
+                <!-- /.footer -->
+            </div>
+        </div>
+        <!-- Left col -->
+        <div class="col-md-8">
+            <!-- MAP & BOX PANE -->
+            <!-- TABLE: LATEST ORDERS -->
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Personal Information</h3>
 
-                // Slide up any open menus except the one being clicked
-                $('.treeview-menu').not($treeviewMenu).slideUp();
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-default3"><i class="fa fa-edit"></i>Update Center</button>
+                        <button type="button" class="btn btn-sm btn-primary " data-toggle="modal" data-target="#modal-default2"><i class="fa fa-edit"></i>Update Index Number</button>
+                        <button type="button" class="btn btn-sm btn-success" data-toggle="modal" data-target="#modal-default"><i class="fa fa-edit"></i>Update Profile</button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table no-margin">
+                            <tbody>
+                                <tr>
+                                    <td><a href="#">Admission No:</a></td>
+                                    <td>
+                                        <div>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">ID/ Passport:</a></td>
+                                    <td>
+                                        <div>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Full Name:</a></td>
+                                    <td>
+                                        <div>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Gender:</a></td>
+                                    <td>
+                                        <div>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Date of Birth:</a></td>
+                                    <td>
+                                        <div>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Phone Number:</a></td>
+                                    <td>
+                                        <div>
+                                          
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Email Address:</a></td>
+                                    <td>
+                                        <div>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Postal Address:</a></td>
+                                    <td>
+                                        <div>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">Center/Campus:</a></td>
+                                    <td>
+                                        <div>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                             
+                               @*  <tr>
+                                    <td><a href="#">University Email:</a></td>
+                                    <td>
+                                        <div>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">University Email Password:</a></td>
+                                    <td>
+                                        <div>
+                                            <asp:Label ID="lblMailPass" runat="server"></asp:Label>&nbsp;<asp:Label ID="Label4" runat="server"></asp:Label>
+                                        </div>
+                                    </td>
+                                </tr> *@
+                            </tbody>
+                        </table>
+                        <div class="col-xs-12">
+                            <div class="alert alert-info alert-dismissible fade in" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                <h4>
+                                    
+                                </h4>
+                             
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.box-body -->
+                <!-- /.box-footer -->
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">My Profile</h4>
+            </div>
+            <div class="modal-body">
+                <div role="form">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <h3>Gender:</h3>
+                            @* <asp:DropDownList ID="ddlgender" class="form-control" runat="server">
+                                <asp:ListItem Value="0">Select</asp:ListItem>
+                                <asp:ListItem Value="1">Male</asp:ListItem>
+                                <asp:ListItem Value="2">Female</asp:ListItem>
+                            </asp:DropDownList> *@
+                        </div>
+                        <div class="form-group">
+                            <h3>Date of Birth:</h3>
+                            <asp:TextBox ID="txtDob" class="form-control" placeholder="Date of Birth" Width="500px" runat="server"></asp:TextBox>
+                            <script>
+                                $j('#Main1_txtDob').Zebra_DatePicker({
+                                    view: 'years',
+                                    direction: [1, true],
+                                });
+                            </script>
+                        </div>
+                        <div class="form-group">
+                            <h3>Home County:</h3>
+                            @* <asp:DropDownList ID="ddlCounty" class="form-control" runat="server"></asp:DropDownList> *@
+                        </div>
+                        <div class="form-group">
+                            <h3>Tribe:</h3>
+                            @* <asp:DropDownList ID="ddlTribe" class="form-control" runat="server"></asp:DropDownList> *@
+                        </div>
+                        <div class="form-group">
+                            <h3>Disability Status:</h3>
+                           @*  <asp:DropDownList ID="ddlDisabled" class="form-control select2" runat="server">
+                                <asp:ListItem Value="1">None</asp:ListItem>
+                                <asp:ListItem Value="2">Disabled</asp:ListItem>
+                            </asp:DropDownList> *@
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btnUpdate" runat="server" onserverclick="btnUpdate_ServerClick">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
 
-                // Slide toggle the clicked menu
-                $treeviewMenu.slideToggle();
-            });
-        });
-    </script>
-</body>
-</html>
+<div class="modal fade" id="modal-default2">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Update your KNEC Index Number</h4>
+            </div>
+            <div class="modal-body">
+                <div role="form">
+                    <div class="box-body">
+
+                        <div class="form-group">
+                            <label for="knecNum">KNEC Index Number:</label>
+                            <asp:TextBox class="form-control" placeholder="Enter your KNEC Index Number" ID="knecNum" runat="server"></asp:TextBox>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="knecBtn">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<div class="modal fade" id="modal-default3">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Update your Learning Center</h4>
+            </div>
+            <div class="modal-body">
+                <div role="form">
+                    <div class="box-body">
+
+                        <div class="form-group">
+
+                            <label for="lcenter">Select Siala TTI Center:</label>
+                           @*  <asp:DropDownList ID="kcenter" class="form-control" runat="server"></asp:DropDownList> *@
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

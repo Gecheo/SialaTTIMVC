@@ -29,6 +29,50 @@ namespace SialaTTIMVC.Controllers
         {
             return View();
         }
+        public IActionResult Fee()
+        {
+            return View();
+        }
+        public IActionResult FeeStatement()
+        {
+            return View();
+        }
+        public IActionResult FeeStructure()
+        {
+            return View();
+        }
+        public IActionResult LecturerEvaluation()
+        {
+            return View();
+        }
+        public IActionResult ProformaInvoice()
+        {
+            return View();
+        }
+        public IActionResult ProvisionalResults()
+        {
+            return View();
+        }
+        public IActionResult ProvisionalTranscript()
+        {
+            return View();
+        }
+        public IActionResult SemRegister() {
+            return View();
+
+        }
+        public IActionResult SpecialExams()
+        {
+            return View();
+        }
+        public IActionResult UnitRegistration() {
+            return View();
+        }
+        public IActionResult UpdateProfile()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

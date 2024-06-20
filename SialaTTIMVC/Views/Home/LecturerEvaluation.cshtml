@@ -1,0 +1,491 @@
+﻿@{
+    Layout = "./_DashboardLayout.cshtml";
+    ViewBag.Title = "Dashboard";
+}
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <header>
+                        <h4 class="box-title">STUDENTS EVALUATION OF INSTRUCTOR AND COURSE</h4>
+                        <!-- begin box-tools -->
+                        <div class="box-tools pull-right">
+                            <a class="fa fa-fw fa-minus" href="#" data-box="collapse"></a>
+                            <a class="fa fa-fw fa-square-o" href="#" data-fullscreen="box"></a>
+                            <a class="fa fa-fw fa-refresh" href="#" data-box="refresh"></a>
+                            <a class="fa fa-fw fa-times" href="#" data-box="close"></a>
+                        </div>
+                        <!-- END: box-tools -->
+                    </header>
+                    <div class="box-body collapse in">
+                        <div class="m-a-10 p-a-15 shadow-2dp">
+                            <table class="table ">
+                                <tbody>
+                                    <tr>
+                                        <th>Faculty/School:</th>
+                                        <td>
+                                            
+                                        </td>
+                                        <th>Programme:</th>
+                                        <td>
+                                           
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Degree:</th>
+                                        <td>
+                                            
+                                        </td>
+                                        <th>Year of Study:</th>
+                                        <td>
+                                           
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <th>Student's Gender:</th>
+                                        <td>
+                                            
+                                        </td>
+                                        <th>Semester:</th>
+                                        <td>
+                                          
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Course:</th>
+                                        <td>
+                                           
+                                        </td>
+                                        <th>Lecturer: </th>
+                                        <td>
+                                            
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="grid_3 grid_5">
+                            <div class="modal-body">
+                                <hr>
+                                <h4>This Rating Scale is designed to evaluate the efficiency and effectiveness of your instructor and the course you have just completed. Your response to the items in this scale is confidential. Please read carefuly the instructions typed in italics before you complete this scale.</h4>
+                                <p>1. Your student number will not be captured after submitting this form.</p>
+                                <p>2. Evaluate the effectiveness of your instructor and course, by rating each of the items in this scale i.e. Poor, Fair, Good, Very Good or Excellent.</p>
+                                <p>3. Respond by selecting an option for each item on this scale, that you believe best evaluates the effectiveness of your lecturer and course.</p>
+                                <p>4. In cases where no options are provided, enter your response by typing on the space provided after the question.</p>
+                                <p>5. After responding to all questions, click on the button labeled "Submit". This button is located at the bottom of the page.</p>
+                                <p class="text-danger">6. Only forms completed will be accepted i.e. If a question has not been responded to, then the whole form will be rejected.</p>
+                                <p>7. You cannot evaluate a course and it's lecturer more than once.</p>
+                            </div>
+                        </div>
+                        <div class="xs" id="dddfd" runat="server">
+                            <h3>EVALUATION OF INSTRUCTOR</h3>
+                            <div class="well1 white">
+                                <div class="form-floating ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-url ng-valid-pattern" novalidate="novalidate" ng-submit="submit()">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                a).
+                                                <asp:Label ID="lbla" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:TextBox ID="txta" runat="server" Visible="false" TextMode="MultiLine" type="text" class="form-control ng-invalid ng-invalid-required ng-touched" ng-model="model.name" required=""></asp:TextBox>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                b).
+                                                <asp:Label ID="lblb" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:TextBox ID="txtb" runat="server" Visible="false" TextMode="MultiLine" type="text" class="form-control ng-invalid ng-invalid-required ng-touched" ng-model="model.name" required=""></asp:TextBox>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                c).
+                                                <asp:Label ID="lblc" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:TextBox ID="txtc" runat="server" Visible="false" TextMode="MultiLine" type="text" class="form-control ng-invalid ng-invalid-required ng-touched" ng-model="model.name" required=""></asp:TextBox>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                d).
+                                                <asp:Label ID="lbld" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:TextBox ID="txtd" runat="server" Visible="false" TextMode="MultiLine" type="text" class="form-control ng-invalid ng-invalid-required ng-touched" ng-model="model.name" required=""></asp:TextBox>
+                                        </div>
+                                        <h3>1. PREPARATION</h3>
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                1a.
+                                                <asp:Label ID="lbl1a" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl1a" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                1b.
+                                                <asp:Label ID="lbl1b" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl1b" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                1c.
+                                                <asp:Label ID="lbl1c" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl1c" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <h3>2. STIMULATION OF LEARNING</h3>
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                2a.
+                                                <asp:Label ID="lbl2a" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl2a" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <h3>3. ORGANIZATION</h3>
+                                        <div class="form-group">
+                                            <label class="control-label">
+                                                3a.
+                                                <asp:Label ID="lbl3a" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl3a" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                            <p class="help-block hint-block">Numeric values from 0-***</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                3b.
+                                                <asp:Label ID="lbl3b" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl3b" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                3c.
+                                                <asp:Label ID="lbl3c" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl3c" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                3d.
+                                                <asp:Label ID="lbl3d" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl3d" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                3e.
+                                                <asp:Label ID="lbl3e" runat="server" Width="887px" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl3e" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <h3>4. COMMUNICATION</h3>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                4a.
+                                                <asp:Label ID="lbl4a" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl4a" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <h3>5. ENTHUSIASM</h3>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                5a.
+                                                <asp:Label ID="lbl5a" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl5a" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <h3>6. FAIRNESS</h3>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                6a.
+                                                <asp:Label ID="lbl6a" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl6a" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <h3>7. FEEDBACK</h3>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                7a.
+                                                <asp:Label ID="lbl7a" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl7a" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                7b.
+                                                <asp:Label ID="lbl7b" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl7b" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                7c.
+                                                <asp:Label ID="lbl7c" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl7c" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <h3>8. CONCERN FOR STUDENTS</h3>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                8a.
+                                                <asp:Label ID="lbl8a" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl8a" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                8b.
+                                                <asp:Label ID="lbl8b" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl8b" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                8c.
+                                                <asp:Label ID="lbl8c" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl8c" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                8d.
+                                                <asp:Label ID="lbl8d" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl8d" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <h3>9. FACILITIES AND LEARNING MATERIALS</h3>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                9a.
+                                                <asp:Label ID="lbl9a" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl9a" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                9b.
+                                                <asp:Label ID="lbl9b" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl9b" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                9c.
+                                                <asp:Label ID="lbl9c" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl9c" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                9d.
+                                                <asp:Label ID="lbl9d" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl9d" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <h3>10. COURSE DESIGN</h3>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                10a.
+                                                <asp:Label ID="lbl10a" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl10a" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label normal">
+                                                10b.
+                                                <asp:Label ID="lbl10b" runat="server" Visible="false"></asp:Label>
+                                            </label>
+                                            <asp:RadioButtonList ID="rbl10b" runat="server" ForeColor="Green" Visible="false"
+                                                                 RepeatDirection="Horizontal" Width="100%">
+                                                <asp:ListItem>Strongly Agree</asp:ListItem>
+                                                <asp:ListItem>Agree</asp:ListItem>
+                                                <asp:ListItem>Neither Agree or Disagree</asp:ListItem>
+                                                <asp:ListItem>Disagree</asp:ListItem>
+                                                <asp:ListItem>Strongly Disagree</asp:ListItem>
+                                            </asp:RadioButtonList>
+                                        </div>
+                                        <div class="form-group">
+                                            <asp:Button ID="btnSubmit" runat="server" class="btn btn-primary" OnClick="btnSubmit_Click"
+                                                        Text="Submit" ToolTip="Click here to submit your responses." Width="150px" />
+                                            <%--<button type="reset" class="btn btn-default">Reset</button>--%>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                        <asp:Label ID="lblError" runat="server"></asp:Label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

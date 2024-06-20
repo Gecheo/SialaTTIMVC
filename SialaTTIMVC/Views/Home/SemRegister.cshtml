@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "./_DashboardLayout.cshtml";
+    ViewBag.Title = "Dashboard";
+}
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-success">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Semester Registration</h3>
+
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    </div>
+                </div>
+
+                <div class="box-body collapse in">
+                    <asp:Label ID="lblError" CssClass="label label-warning" runat="server"></asp:Label>
+                    <table class="table table-bordered">
+                        <tr>
+                            <td>Student No:</td>
+                            <td>
+                                <asp:Label ID="lblStudentNo" runat="server" ForeColor="Green"></asp:Label>
+                            </td>
+                            <td>Semester Code:</td>
+                            <td>
+                                <asp:Label ID="lblSemester" runat="server" ForeColor="Green"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Names:</td>
+                            <td>
+                                <asp:Label ID="lblNames" runat="server" ForeColor="Green"></asp:Label>
+                            </td>
+                            <td>Settlement Type:</td>
+                            <td>
+                                <asp:Label ID="lblSttlmntTp" runat="server" ForeColor="Green"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Programme Code:</td>
+                            <td>
+                                <asp:Label ID="LblProgrammes" runat="server" ForeColor="Green" Text=""></asp:Label>
+                            </td>
+                            <td>Stage:</td>
+                            <td>
+                                <asp:DropDownList ID="ddlStages" CssClass="form-control" runat="server" AutoPostBack="True" ForeColor="Green">
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="col-sm-12 text-center">
+                        <asp:LinkButton ID="lbtnRegister" class="btn btn-success btn-lg success" runat="server" OnClick="lbtnRegister_Click" OnClientClick="if(!confirm('Do you want to register for this stage?')) return false;"><i class="fa fa-check"></i> Register<span class="waves"></span></asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="col-sm-4">
+        </div>
+
+        <div class="col-sm-4">
+        </div>
+    </div>
+</section>
