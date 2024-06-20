@@ -1,0 +1,82 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.row {
+    display: flex;
+}
+
+.col-md-3 {
+    width: 25%;
+}
+
+.textbox-container {
+    position: relative;
+}
+
+.textbox-with-icon {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+    .textbox-with-icon input {
+        width: 100%;
+    }
+
+    .textbox-with-icon .icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+
+    .dropdown-options p {
+        margin: 0;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+        .dropdown-options p:hover {
+            background-color: #f1f1f1;
+        }
+
+/* CSS for initial layout and hidden menus */
+.sidebar-menu .treeview-menu {
+    display: none; /* Hide the menu by default */
+    list-style: none;
+    padding-left: 20px;
+}
+
+    .sidebar-menu .treeview-menu li {
+        margin: 5px 0;
+    }
