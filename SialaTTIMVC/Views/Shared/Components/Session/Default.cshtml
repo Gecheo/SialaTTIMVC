@@ -1,0 +1,42 @@
+﻿@model string
+@if (!string.IsNullOrEmpty(Model))
+{
+    <li class="nav-item">
+        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Logout">
+            <button class=" btn btn-outline-danger">
+                 
+                <b class="">
+                    Logout(@Model)
+                </b>
+            </button>
+        </a>
+        
+    </li>
+}
+else
+{
+
+    <li class="nav-item">
+        <a class="nav-link" asp-area="" asp-controller="" asp-action="">
+            <button class=" btn btn-outline-primary">
+                
+                <b class="">
+                    Register
+                </b>
+            
+            </button>
+        </a>
+        
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+            <button class="btn btn-outline-info">
+               
+                <b class="">
+                Login</b>
+            
+                </button>
+        </a>
+    </li>
+}

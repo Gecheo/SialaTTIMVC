@@ -49,34 +49,24 @@ body {
         cursor: pointer;
     }
 
-.dropdown-options {
+.dropdown-menu {
     display: none;
     position: absolute;
-    background: white;
-    border: 1px solid #ccc;
-    width: 100%;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
+    background-color: snow;
+    box-shadow: 2px 4px 4px rgba(16, 225, 232, 1);
+    z-index: 1;
 }
 
-    .dropdown-options p {
-        margin: 0;
-        padding: 10px;
-        cursor: pointer;
-    }
-
-        .dropdown-options p:hover {
-            background-color: #f1f1f1;
-        }
-
-/* CSS for initial layout and hidden menus */
-.sidebar-menu .treeview-menu {
-    display: none; /* Hide the menu by default */
-    list-style: none;
-    padding-left: 20px;
+.dropdown:hover .dropdown-menu {
+    display: block;
 }
 
-    .sidebar-menu .treeview-menu li {
-        margin: 5px 0;
-    }
+.icon-margin {
+    margin-right: 5px;
+}
+
+
+.dropdown-item:hover {
+    color: white;
+    background-color: darkslategray;
+}
