@@ -45,7 +45,14 @@ namespace SialaTTIMVC.Controllers
         /***************************** Forgot Password *********************************/
         public IActionResult ForgotPassword()
         {
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
         }
 
        
@@ -95,7 +102,14 @@ namespace SialaTTIMVC.Controllers
         public IActionResult Privacy()
         {
 
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
         }
         /***************************** Dashboard *********************************/
         public IActionResult Dashboard()
@@ -114,8 +128,16 @@ namespace SialaTTIMVC.Controllers
 
         /***************************** Fee *********************************/
         public IActionResult Fee()
+           
         {
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
         }
         /***************************** Fee Statement *********************************/
         public IActionResult FeeStatement()
@@ -125,47 +147,111 @@ namespace SialaTTIMVC.Controllers
         /***************************** Fee Structure *********************************/
         public IActionResult FeeStructure()
         {
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
         }
 
         /***************************** Lecturer Evaluation *********************************/
         public IActionResult LecturerEvaluation()
         {
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index)); ;
+            }
+            else
+            {
+                return View();
+            }
         }
 
         /***************************** Proforma Invoice *********************************/
         public IActionResult ProformaInvoice()
         {
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
         }
         /***************************** Provisional results *********************************/
         public IActionResult ProvisionalResults()
         {
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
         }
         /***************************** Transcript *********************************/
         public IActionResult ProvisionalTranscript()
         {
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
         }
         public IActionResult SemRegister() {
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
 
         }
         public IActionResult SpecialExams()
         {
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
         }
         public IActionResult UnitRegistration() {
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
         }
         public IActionResult UpdateProfile()
         {
-            return View();
+            if (HttpContext.Session.GetString("studentNo") == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
         }
-        public IActionResult Logout()
+        public IActionResult Logout(string session)
         {
+            session = string.Empty;
             HttpContext.Session?.Clear();
             return RedirectToAction(nameof(Index));
         }
